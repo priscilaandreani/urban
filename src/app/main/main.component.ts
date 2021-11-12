@@ -6,17 +6,19 @@ import { Offer } from '../shared/offers.model';
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css'],
-  providers: [OffersService]
+  providers: [OffersService],
 })
 export class MainComponent implements OnInit {
+  public offers: Offer[];
 
-  public offers: Offer[]
+  constructor(private offersService: OffersService) {}
 
-  constructor(private offersService: OffersService) { }
-
-  ngOnInit(): void {
-    this.offers = this.offersService.getOffers();
-    //console.log(this.offers);
+  ngOnInit() {
+    this.offersService
+      .getOffers()
+      .then((offers: Offer[]) => {
+        this.offers = offers;
+      })
+      .catch((params: any) => console.log(params));
   }
-
 }
