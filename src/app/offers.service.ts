@@ -12,4 +12,11 @@ export class OffersService {
       .toPromise()
       .then((res: any) => res);
   }
+
+  public getOffersByCategory(category: string): Promise<Offer[]> {
+    return this.http
+      .get(`http://localhost:3000/ofertas?categoria=${category}`)
+      .toPromise()
+      .then((res: any) => res);
+  }
 }
