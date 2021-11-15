@@ -19,4 +19,11 @@ export class OffersService {
       .toPromise()
       .then((res: any) => res);
   }
+
+  public getOfferById(id: number): Promise<Offer> {
+    return this.http
+      .get(`http://localhost:3000/ofertas?id=${id}`)
+      .toPromise()
+      .then((res: any) => res.shift());
+  }
 }
