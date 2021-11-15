@@ -12,6 +12,8 @@ import { FooterComponent } from './footer/footer.component';
 import { FunComponent } from './fun/fun.component';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { OfferComponent } from './offer/offer.component';
+import { HowToUseComponent } from './offer/how-to-use/how-to-use.component';
+import { AddressComponent } from './offer/address/address.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { OfferComponent } from './offer/offer.component';
     FunComponent,
     RestaurantsComponent,
     OfferComponent,
+    HowToUseComponent,
+    AddressComponent,
   ],
   imports: [BrowserModule, HttpClientModule, RouterModule.forRoot(ROUTES)],
   providers: [],

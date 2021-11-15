@@ -40,4 +40,44 @@
       </div>
     </div>
   </div>
+
+  <div class="row" style="margin-bottom: 150px; margin-top: 25px">
+    <div class="col">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button
+            routerLink="como-utilizar"
+            class="nav-link active"
+            id="como-utilizar-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#como-utilizar"
+            type="button"
+            role="tab"
+            aria-controls="como-utilizar"
+            aria-selected="true"
+          >
+            Como utilizar?
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            routerLink="endereco"
+            class="nav-link"
+            id="endereco-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#endereco"
+            type="button"
+            role="tab"
+            aria-controls="endereco"
+            aria-selected="false"
+          >
+            Endereço
+          </button>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
 </div>
