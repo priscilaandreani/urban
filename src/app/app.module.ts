@@ -11,6 +11,7 @@ import { MainComponent } from './main/main.component';
 import { FooterComponent } from './footer/footer.component';
 import { FunComponent } from './fun/fun.component';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
+import { OfferComponent } from './offer/offer.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { RestaurantsComponent } from './restaurants/restaurants.component';
     FooterComponent,
     FunComponent,
     RestaurantsComponent,
+    OfferComponent,
   ],
   imports: [BrowserModule, HttpClientModule, RouterModule.forRoot(ROUTES)],
   providers: [],

@@ -1,8 +1,9 @@
 <div class="container">
-
   <div class="section">
     <h3 class="text-center">Destaques do dia!</h3>
-    <h5 class="text-center">Aproveite as super ofertas que separamos para você:</h5>
+    <h5 class="text-center">
+      Aproveite as super ofertas que separamos para você:
+    </h5>
   </div>
 
   <hr />
@@ -10,18 +11,20 @@
   <div class="row">
     <div class="col-sm-4" *ngFor="let offer of offers">
       <div class="card">
-        <img class="card-img-top" [src]="offer.imagens[0].url">
+        <img class="card-img-top" [src]="offer.imagens[0].url" />
 
         <div class="card-block">
-          <h4 class="card-title">{{offer.titulo}}</h4>
-          <p class="card-text">{{offer.descricao_oferta}}</p>
-          <p class="price">{{offer.valor}}</p>
-          <a href="#" class="btn btn-outline-primary">Ver oferta</a>
+          <h4 class="card-title">{{ offer.titulo }}</h4>
+          <p class="card-text">{{ offer.descricao_oferta }}</p>
+          <p class="price">{{ offer.valor }}</p>
+          <a
+            [routerLink]="['/ofertas', offer.id]"
+            class="btn btn-outline-primary"
+            >Ver oferta</a
+          >
         </div>
       </div>
     </div>
-
   </div>
   <hr />
-
 </div>
