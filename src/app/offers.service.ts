@@ -3,6 +3,10 @@ import { Injectable } from '@angular/core';
 import { Offer } from './shared/offers.model';
 
 import { URL_API } from './app.api';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { retry } from 'rxjs/operators';
+
 @Injectable()
 export class OffersService {
   constructor(private http: Http) {}
@@ -40,5 +44,14 @@ export class OffersService {
       .get(`${URL_API}/endereco?id=${id}`)
       .toPromise()
       .then((res: any) => res[0].descricao);
+  }
+
+  public searchOffer(offer: string): Observable<Offer[]> {
+    return this.http
+      .get(`${URL_API}/ofertas?descricao_oferta_like=${offer}`)
+      .pipe(
+        retry(5),
+        map((res: any) => res)
+      );
   }
 }

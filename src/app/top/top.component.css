@@ -6,6 +6,19 @@
   transform: scale(2);
 }
 
+.search,
+.div-cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list {
+  position: absolute;
+  top: 86px;
+  left: 217px;
+}
+
 .menu {
   background: #0b0a12;
 }
