@@ -5,9 +5,9 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'shortDescription',
 })
 export class ShortDescription implements PipeTransform {
-  transform(text: string): string {
-    if (text.length > 15) {
-      return text.substr(0, 15) + '...';
+  transform(text: string, after: number): string {
+    if (text.length > after) {
+      return text.substr(0, after) + '...';
     }
     return text;
   }
