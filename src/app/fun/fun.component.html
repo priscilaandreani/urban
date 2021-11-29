@@ -30,7 +30,7 @@
 
         <div class="row">
           <p>
-            {{ offer.valor }}
+            {{ offer.valor | currency: "BRL":"symbol" }}
           </p>
         </div>
 
