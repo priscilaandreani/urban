@@ -17,6 +17,7 @@ import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { OfferComponent } from './offer/offer.component';
 import { HowToUseComponent } from './offer/how-to-use/how-to-use.component';
 import { AddressComponent } from './offer/address/address.component';
+import { ShortDescription } from './utils/short-description.pipe';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { AddressComponent } from './offer/address/address.component';
     OfferComponent,
     HowToUseComponent,
     AddressComponent,
+    ShortDescription,
   ],
   imports: [BrowserModule, HttpClientModule, RouterModule.forRoot(ROUTES)],
   providers: [{ provide: LOCALE_ID, useValue: 'pt' }],

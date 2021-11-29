@@ -17,7 +17,7 @@
           />
           <ul class="list-group list">
             <li class="list-group-item" *ngFor="let result of resultOffers">
-              {{ result.titulo }}
+              {{ result.titulo | shortDescription }}
             </li>
           </ul>
         </div>
