@@ -44,4 +44,8 @@ export class TopComponent implements OnInit {
   search(_searchValue: string): void {
     this.subjectSearch.next(_searchValue);
   }
+
+  cleanSearch(): void {
+    this.subjectSearch.next('');
+  }
 }

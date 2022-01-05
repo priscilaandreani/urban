@@ -17,6 +17,8 @@
   position: absolute;
   top: 86px;
   left: 217px;
+
+  z-index: 999;
 }
 
 .menu {

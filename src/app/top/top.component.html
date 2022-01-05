@@ -16,7 +16,11 @@
             (keyup)="search(_inputSearch.value)"
           />
           <ul class="list-group list">
-            <li class="list-group-item" *ngFor="let result of resultOffers">
+            <li
+              class="list-group-item"
+              *ngFor="let result of resultOffers"
+              (click)="cleanSearch()"
+            >
               <a [routerLink]="['/ofertas', result.id]">{{
                 result.titulo | shortDescription: 15
               }}</a>
