@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { PurchaseOrderService } from '../service/purchase-order.service';
+import { Order } from '../shared/order.model';
 
 @Component({
   selector: 'app-purchase-order',
   templateUrl: './purchase-order.component.html',
   styleUrls: ['./purchase-order.component.css'],
+  providers: [PurchaseOrderService],
 })
 export class PurchaseOrderComponent implements OnInit {
   public address: string = '';
@@ -23,11 +26,16 @@ export class PurchaseOrderComponent implements OnInit {
   public pristineStateComplement: boolean = true;
   public pristineStatePaymentMethod: boolean = true;
 
+  //pedido
+  public order: Order = new Order('', '', '', '');
+
   //controlar o botão de confirmar compra
   public canFinish: string = 'disabled';
 
-  constructor() {}
-  ngOnInit(): void {}
+  constructor(private purchaseOrderService: PurchaseOrderService) {}
+  ngOnInit(): void {
+    // this.purchaseOrderService.makePurchase();
+  }
 
   public updateAddress(address: string): void {
     this.address = address;
@@ -85,5 +93,13 @@ export class PurchaseOrderComponent implements OnInit {
     } else {
       this.canFinish = 'disable';
     }
+  }
+
+  public finishOrder(): void {
+    this.order.address = this.address;
+    this.order.complement = this.complement;
+    this.order.number = this.number;
+    this.order.paymentMethod = this.paymentMethod;
+    this.purchaseOrderService.makePurchase(this.order);
   }
 }
