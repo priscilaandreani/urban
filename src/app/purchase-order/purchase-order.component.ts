@@ -11,27 +11,79 @@ export class PurchaseOrderComponent implements OnInit {
   public number: string = '';
   public paymentMethod: string = '';
 
+  //controles de validação
+  public validAddress: boolean;
+  public validNumber: boolean;
+  public validComplement: boolean;
+  public validPaymentMethod: boolean;
+
+  //estados primitivos dos campos (pristine)
+  public pristineStateAddress: boolean = true;
+  public pristineStateNumber: boolean = true;
+  public pristineStateComplement: boolean = true;
+  public pristineStatePaymentMethod: boolean = true;
+
+  //controlar o botão de confirmar compra
+  public canFinish: string = 'disabled';
+
   constructor() {}
+  ngOnInit(): void {}
 
   public updateAddress(address: string): void {
     this.address = address;
-    console.log(this.address);
+    this.pristineStateAddress = false;
+
+    if (this.address.trim().length > 3) {
+      this.validAddress = true;
+    } else {
+      this.validAddress = false;
+    }
+    this.enableForm();
   }
 
   public updateNumber(number: string): void {
     this.number = number;
-    console.log(this.number);
+
+    this.pristineStateNumber = false;
+
+    if (this.number.length > 0 && Number(this.number) >= 1) {
+      this.validNumber = true;
+    } else {
+      this.validNumber = false;
+    }
+    this.enableForm();
   }
 
   public updateComplement(complement: string): void {
     this.complement = complement;
-    console.log(this.complement);
+    this.pristineStateComplement = false;
+
+    if (this.complement.trim().length > 0) {
+      this.validComplement = true;
+    }
   }
 
   public updatePaymentMethod(method: string): void {
     this.paymentMethod = method;
-    console.log(this.paymentMethod);
+    this.pristineStatePaymentMethod = false;
+
+    if (this.paymentMethod.length > 0) {
+      this.validPaymentMethod = true;
+    } else {
+      this.validPaymentMethod = false;
+    }
+    this.enableForm();
   }
 
-  ngOnInit(): void {}
+  public enableForm(): void {
+    if (
+      this.validAddress == true &&
+      this.validNumber == true &&
+      this.validPaymentMethod == true
+    ) {
+      this.canFinish = '';
+    } else {
+      this.canFinish = 'disable';
+    }
+  }
 }
