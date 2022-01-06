@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { OffersService } from 'src/app/offers.service';
 
 @Component({
@@ -17,10 +17,10 @@ export class AddressComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.offerService
-      .getAddressById(this.route.parent?.snapshot.params['id'])
-      .then((res: string) => {
+    this.route.parent?.params.subscribe((params: Params) => {
+      this.offerService.getAddressById(params.id).then((res: string) => {
         this.address = res;
       });
+    });
   }
 }
