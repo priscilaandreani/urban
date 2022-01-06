@@ -18,6 +18,7 @@ import { OfferComponent } from './offer/offer.component';
 import { HowToUseComponent } from './offer/how-to-use/how-to-use.component';
 import { AddressComponent } from './offer/address/address.component';
 import { ShortDescription } from './utils/short-description.pipe';
+import { PurchaseOrderComponent } from './purchase-order/purchase-order.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { ShortDescription } from './utils/short-description.pipe';
     HowToUseComponent,
     AddressComponent,
     ShortDescription,
+    PurchaseOrderComponent,
   ],
   imports: [BrowserModule, HttpClientModule, RouterModule.forRoot(ROUTES)],
   providers: [{ provide: LOCALE_ID, useValue: 'pt' }],
