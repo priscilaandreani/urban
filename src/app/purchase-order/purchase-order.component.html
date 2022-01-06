@@ -1,6 +1,6 @@
 <div class="container">
   <div class="ordem-compra">
-    <form>
+    <form novalidate>
       <h5>Sua Compra</h5>
       <hr />
 
@@ -83,6 +83,9 @@
             autocomplete="off"
             minlength="5"
             required
+            [value]="address"
+            #_inputAddress
+            (input)="updateAddress(_inputAddress.value)"
           />
           <div class="invalid-feedback">Endereço inválido</div>
         </div>
@@ -95,8 +98,10 @@
             autocomplete="off"
             minlength="1"
             required
+            [value]="number"
+            #_inputNumber
+            (input)="updateNumber(_inputNumber.value)"
           />
-          <br />
           <small class="form-text text-muted">Ok</small>
         </div>
 
@@ -106,6 +111,9 @@
             class="form-control"
             placeholder="Complemento"
             autocomplete="off"
+            [value]="complement"
+            #_inputComplement
+            (input)="updateComplement(_inputComplement.value)"
           />
         </div>
       </div>
@@ -116,10 +124,24 @@
 
       <div class="form-row">
         <div class="form-group col-md-3">
-          <select class="form-control is-invalid">
-            <option>Selecione uma opção</option>
-            <option>Dinheiro</option>
-            <option>Débito</option>
+          <select
+            class="form-control is-invalid"
+            #_selectMethod
+            (change)="updatePaymentMethod(_selectMethod.value)"
+          >
+            <option value="">Selecione uma opção</option>
+            <option
+              value="cash"
+              selected="{{ paymentMethod === 'cash' ? 'selected' : '' }}"
+            >
+              Dinheiro
+            </option>
+            <option
+              value="card"
+              selected="{{ paymentMethod === 'card' ? 'selected' : '' }}"
+            >
+              Débito
+            </option>
           </select>
 
           <div class="invalid-feedback">Selecione uma forma de pagamento</div>
