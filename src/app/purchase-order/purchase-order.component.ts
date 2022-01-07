@@ -100,6 +100,7 @@ export class PurchaseOrderComponent implements OnInit {
     this.order.complement = this.complement;
     this.order.number = this.number;
     this.order.paymentMethod = this.paymentMethod;
-    this.purchaseOrderService.makePurchase(this.order);
+
+    this.purchaseOrderService.makePurchase(this.order).subscribe();
   }
 }
