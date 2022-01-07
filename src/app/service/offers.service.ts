@@ -1,8 +1,8 @@
 import { HttpClient as Http } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Offer } from './shared/offers.model';
+import { Offer } from '../shared/offers.model';
 
-import { URL_API } from './app.api';
+import { URL_API } from '../app.api';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { retry } from 'rxjs/operators';
