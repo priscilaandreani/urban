@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import { OffersService } from '../offers.service';
+import { OffersService } from '../service/offers.service';
 import { Offer } from '../shared/offers.model';
 import {
   catchError,

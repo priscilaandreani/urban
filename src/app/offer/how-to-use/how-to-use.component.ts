@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { OffersService } from 'src/app/offers.service';
+import { OffersService } from 'src/app/service/offers.service';
 
 @Component({
   selector: 'app-how-to-use',
