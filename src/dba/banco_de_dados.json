@@ -192,6 +192,20 @@
       "complement": "",
       "paymentMethod": "card",
       "id": 1
+    },
+    {
+      "address": "ADse",
+      "number": "12",
+      "complement": "",
+      "paymentMethod": "card",
+      "id": 2
+    },
+    {
+      "address": "Rua 2",
+      "number": "12",
+      "complement": "",
+      "paymentMethod": "card",
+      "id": 3
     }
   ]
 }

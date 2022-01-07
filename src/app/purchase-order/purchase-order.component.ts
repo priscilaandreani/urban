@@ -29,6 +29,9 @@ export class PurchaseOrderComponent implements OnInit {
   //pedido
   public order: Order = new Order('', '', '', '');
 
+  //retorno da API
+  public idOrderPurchase: number;
+
   //controlar o botão de confirmar compra
   public canFinish: string = 'disabled';
 
@@ -101,6 +104,10 @@ export class PurchaseOrderComponent implements OnInit {
     this.order.number = this.number;
     this.order.paymentMethod = this.paymentMethod;
 
-    this.purchaseOrderService.makePurchase(this.order).subscribe();
+    this.purchaseOrderService
+      .makePurchase(this.order)
+      .subscribe((idOrder: number) => {
+        this.idOrderPurchase = idOrder;
+      });
   }
 }
