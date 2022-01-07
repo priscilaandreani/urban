@@ -5,6 +5,7 @@ import localePt from '@angular/common/locales/pt';
 
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { ROUTES } from './app.routes';
 
@@ -34,7 +35,12 @@ import { PurchaseOrderComponent } from './purchase-order/purchase-order.componen
     ShortDescription,
     PurchaseOrderComponent,
   ],
-  imports: [BrowserModule, HttpClientModule, RouterModule.forRoot(ROUTES)],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    RouterModule.forRoot(ROUTES),
+    FormsModule,
+  ],
   providers: [{ provide: LOCALE_ID, useValue: 'pt' }],
   bootstrap: [AppComponent],
 })
