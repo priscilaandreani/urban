@@ -20,6 +20,7 @@ import { HowToUseComponent } from './offer/how-to-use/how-to-use.component';
 import { AddressComponent } from './offer/address/address.component';
 import { ShortDescription } from './utils/short-description.pipe';
 import { PurchaseOrderComponent } from './purchase-order/purchase-order.component';
+import { PurchaseOrderSuccessComponent } from './purchase-order-success/purchase-order-success.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { PurchaseOrderComponent } from './purchase-order/purchase-order.componen
     AddressComponent,
     ShortDescription,
     PurchaseOrderComponent,
+    PurchaseOrderSuccessComponent,
   ],
   imports: [
     BrowserModule,
