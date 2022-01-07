@@ -19,6 +19,7 @@ import { HowToUseComponent } from './offer/how-to-use/how-to-use.component';
 import { AddressComponent } from './offer/address/address.component';
 import { ShortDescription } from './utils/short-description.pipe';
 import { PurchaseOrderComponent } from './purchase-order/purchase-order.component';
+import { PurchaseOrderSucessComponent } from './purchase-order-sucess/purchase-order-sucess.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { PurchaseOrderComponent } from './purchase-order/purchase-order.componen
     AddressComponent,
     ShortDescription,
     PurchaseOrderComponent,
+    PurchaseOrderSucessComponent,
   ],
   imports: [BrowserModule, HttpClientModule, RouterModule.forRoot(ROUTES)],
   providers: [{ provide: LOCALE_ID, useValue: 'pt' }],
