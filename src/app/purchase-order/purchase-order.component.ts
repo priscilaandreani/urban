@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { PurchaseOrderService } from '../service/purchase-order.service';
 import { Order } from '../shared/order.model';
 @Component({
@@ -9,10 +9,21 @@ import { Order } from '../shared/order.model';
   providers: [PurchaseOrderService],
 })
 export class PurchaseOrderComponent implements OnInit {
-  @ViewChild('form', { static: false })
-  public form: NgForm;
-
   public idPurchaseOrder: number;
+  public form: FormGroup = new FormGroup({
+    address: new FormControl(null, [
+      Validators.required,
+      Validators.minLength(3),
+      Validators.maxLength(120),
+    ]),
+    number: new FormControl(null, [
+      Validators.required,
+      Validators.minLength(1),
+      Validators.maxLength(8),
+    ]),
+    complement: new FormControl(null),
+    paymentMethod: new FormControl(null, [Validators.required]),
+  });
 
   constructor(private purchaseOrderService: PurchaseOrderService) {}
 
@@ -25,6 +36,8 @@ export class PurchaseOrderComponent implements OnInit {
       this.form.value.complement,
       this.form.value.paymentMethod
     );
+
+    console.log(order);
     this.purchaseOrderService
       .makePurchase(order)
       .subscribe(
