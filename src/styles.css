@@ -1,26 +1,38 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 h5 {
-    color:#999
+  color: #999;
 }
 
 h4 {
-    color:#555
+  color: #555;
 }
 
 h3 {
-    color: #555
+  color: #555;
 }
 
-.card img {
-    height: 200px;
+.btn-outline-primary {
+  color: #f60;
+  border: 1px solid #f60;
+  margin: 0;
 }
 
-.section {
-    margin-top: 30px;
-    margin-bottom: 30px
+.btn-outline-primary:hover {
+  background-color: #f60;
+  color: #fff;
 }
 
-.price {
-    color: #f60;
-    font-weight: bold;
-    font-size: 20px
+.btn-outline-success {
+  border: 1px solid #006c67;
+  color: #006c67;
+}
+
+.btn-outline-success:hover {
+  background-color: #006c67;
+  color: #fff;
 }
