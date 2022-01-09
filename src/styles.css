@@ -9,7 +9,8 @@ h5 {
 }
 
 h4 {
-  color: #555;
+  color: #f60;
+  font-size: 32px;
 }
 
 h3 {
@@ -24,6 +25,7 @@ h3 {
 
 .btn-outline-primary:hover {
   background-color: #f60;
+  border: 1px solid #f60;
   color: #fff;
 }
 
@@ -34,5 +36,28 @@ h3 {
 
 .btn-outline-success:hover {
   background-color: #006c67;
+  border: 1px solid #006c67;
+
   color: #fff;
+}
+
+.btn-primary {
+  background-color: #f60;
+  border: 1px solid #f60;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  color: #f60;
+  border: 1px solid #f60;
+  margin: 0;
+  background-color: transparent;
+}
+
+.nav-link {
+  color: #f60;
+}
+
+.nav-link:hover {
+  color: #cc5200;
 }
