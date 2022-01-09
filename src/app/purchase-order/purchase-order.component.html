@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="ordem-compra">
-    <form>
+  <div *ngIf="idPurchaseOrder === undefined" class="ordem-compra">
+    <form novalidate #form="ngForm" (ngSubmit)="finishOrder()">
       <h5>Sua Compra</h5>
       <hr />
 
@@ -45,7 +45,7 @@
         <div class="form-group col-sm-1">
           <img src="/assets/ofertas/4/img1.jpg" class="img-fluid" />
         </div>
-        <div class="form-group col-sm-6">
+        <div class="form-group col-sm-i6">
           Estância das águas
           <br />
           Diversão garantida com piscinas, trilhas e muito mais.
@@ -78,26 +78,41 @@
         <div class="form-group col-md-6">
           <input
             type="text"
-            class="form-control is-invalid"
+            class="form-control"
             placeholder="Endereço"
             autocomplete="off"
-            minlength="5"
+            minlength="3"
             required
+            ngModel
+            name="address"
+            #_inputAddress="ngModel"
           />
-          <div class="invalid-feedback">Endereço inválido</div>
+          <div
+            *ngIf="_inputAddress.invalid && _inputAddress.touched"
+            class="form-text text-danger"
+          >
+            Por favor, digite um endereço válido
+          </div>
         </div>
 
         <div class="form-group col-md-2">
           <input
             type="text"
-            class="form-control is-valid"
+            class="form-control"
             placeholder="Número"
             autocomplete="off"
             minlength="1"
             required
+            ngModel
+            name="number"
+            #_number="ngModel"
           />
-          <br />
-          <small class="form-text text-muted">Ok</small>
+          <div
+            *ngIf="_number.invalid && _number.touched"
+            class="form-text text-danger"
+          >
+            Por favor, digite um número válido
+          </div>
         </div>
 
         <div class="form-group col-md-4">
@@ -106,6 +121,8 @@
             class="form-control"
             placeholder="Complemento"
             autocomplete="off"
+            ngModel
+            name="complement"
           />
         </div>
       </div>
@@ -116,13 +133,24 @@
 
       <div class="form-row">
         <div class="form-group col-md-3">
-          <select class="form-control is-invalid">
-            <option>Selecione uma opção</option>
-            <option>Dinheiro</option>
-            <option>Débito</option>
+          <select
+            class="form-control"
+            #_paymentMethod="ngModel"
+            ngModel
+            required
+            name="paymentMethod"
+          >
+            <option value="">Selecione uma opção</option>
+            <option value="cash">Dinheiro</option>
+            <option value="card">Débito</option>
           </select>
 
-          <div class="invalid-feedback">Selecione uma forma de pagamento</div>
+          <div
+            *ngIf="_paymentMethod.invalid && _paymentMethod.touched"
+            class="form-text text-danger"
+          >
+            Por favor, verfique a forma de pagamento
+          </div>
         </div>
       </div>
 
@@ -131,5 +159,11 @@
         Cofirmar compra
       </button>
     </form>
+  </div>
+
+  <div *ngIf="idPurchaseOrder !== undefined">
+    <app-purchase-order-success
+      [idPurchaseOrder]="idPurchaseOrder"
+    ></app-purchase-order-success>
   </div>
 </div>
