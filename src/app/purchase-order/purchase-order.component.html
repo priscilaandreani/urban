@@ -1,6 +1,6 @@
 <div class="container">
-  <div *ngIf="idPurchaseOrder === undefined" class="ordem-compra">
-    <form novalidate #form="ngForm" (ngSubmit)="finishOrder()">
+  <div class="ordem-compra" *ngIf="idPurchaseOrder === undefined">
+    <form novalidate [formGroup]="form" (ngSubmit)="finishOrder()">
       <h5>Sua Compra</h5>
       <hr />
 
@@ -81,14 +81,12 @@
             class="form-control"
             placeholder="Endereço"
             autocomplete="off"
-            minlength="3"
-            required
-            ngModel
-            name="address"
-            #_inputAddress="ngModel"
+            formControlName="address"
           />
           <div
-            *ngIf="_inputAddress.invalid && _inputAddress.touched"
+            *ngIf="
+              form.controls.address.invalid && form.controls.address.touched
+            "
             class="form-text text-danger"
           >
             Por favor, digite um endereço válido
@@ -101,14 +99,10 @@
             class="form-control"
             placeholder="Número"
             autocomplete="off"
-            minlength="1"
-            required
-            ngModel
-            name="number"
-            #_number="ngModel"
+            formControlName="number"
           />
           <div
-            *ngIf="_number.invalid && _number.touched"
+            *ngIf="form.controls.number.invalid && form.controls.number.touched"
             class="form-text text-danger"
           >
             Por favor, digite um número válido
@@ -121,8 +115,8 @@
             class="form-control"
             placeholder="Complemento"
             autocomplete="off"
-            ngModel
             name="complement"
+            formControlName="complement"
           />
         </div>
       </div>
@@ -133,20 +127,17 @@
 
       <div class="form-row">
         <div class="form-group col-md-3">
-          <select
-            class="form-control"
-            #_paymentMethod="ngModel"
-            ngModel
-            required
-            name="paymentMethod"
-          >
+          <select class="form-control" formControlName="paymentMethod">
             <option value="">Selecione uma opção</option>
             <option value="cash">Dinheiro</option>
             <option value="card">Débito</option>
           </select>
 
           <div
-            *ngIf="_paymentMethod.invalid && _paymentMethod.touched"
+            *ngIf="
+              form.controls.paymentMethod.invalid &&
+              form.controls.paymentMethod.touched
+            "
             class="form-text text-danger"
           >
             Por favor, verfique a forma de pagamento
@@ -155,7 +146,11 @@
       </div>
 
       <hr />
-      <button type="submit" class="btn btn-primary btn-lg">
+      <button
+        type="submit"
+        class="btn btn-primary btn-lg"
+        [disabled]="!form.valid"
+      >
         Cofirmar compra
       </button>
     </form>

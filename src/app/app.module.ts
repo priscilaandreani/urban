@@ -5,7 +5,6 @@ import localePt from '@angular/common/locales/pt';
 
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
 
 import { ROUTES } from './app.routes';
 
@@ -21,6 +20,7 @@ import { AddressComponent } from './offer/address/address.component';
 import { ShortDescription } from './utils/short-description.pipe';
 import { PurchaseOrderComponent } from './purchase-order/purchase-order.component';
 import { PurchaseOrderSuccessComponent } from './purchase-order-success/purchase-order-success.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -41,7 +41,7 @@ import { PurchaseOrderSuccessComponent } from './purchase-order-success/purchase
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(ROUTES),
-    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'pt' }],
   bootstrap: [AppComponent],

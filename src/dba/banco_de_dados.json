@@ -206,6 +206,55 @@
       "complement": "",
       "paymentMethod": "card",
       "id": 3
+    },
+    {
+      "address": "Rua ",
+      "number": "1",
+      "complement": "a",
+      "paymentMethod": "cash",
+      "id": 4
+    },
+    {
+      "address": "Rua ",
+      "number": "1",
+      "complement": "a",
+      "paymentMethod": "cash",
+      "id": 5
+    },
+    {
+      "address": "Rua ",
+      "number": "10",
+      "complement": null,
+      "paymentMethod": "cash",
+      "id": 6
+    },
+    {
+      "address": "Rua 12",
+      "number": "10",
+      "complement": null,
+      "paymentMethod": "cash",
+      "id": 7
+    },
+    {
+      "address": "Rua Teste",
+      "number": "10",
+      "complement": null,
+      "paymentMethod": "cash",
+      "id": 8
+    },
+    {
+      "address": "Rua teste ",
+      "number": "10",
+      "complement": null,
+      "paymentMethod": "cash",
+      "id": 9
+    },
+    {
+      "address": "Rua 12",
+      "number": "19",
+      "complement": null,
+      "paymentMethod": "card",
+      "id": 10
     }
   ]
 }
