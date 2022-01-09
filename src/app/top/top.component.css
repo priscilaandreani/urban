@@ -2,21 +2,29 @@
   background-color: #fff;
 }
 
-.cart {
-  transform: scale(2);
+.navbar {
+  display: block;
 }
 
-.search,
-.div-cart {
+.cart {
+  height: 40px;
+  width: 40px;
+}
+
+.logo {
   display: flex;
   align-items: center;
-  justify-content: center;
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
 }
 
 .list {
-  position: absolute;
-  top: 86px;
-  left: 217px;
+  position: fixed;
+  margin-top: 38px;
+  display: block;
 
   z-index: 999;
 }

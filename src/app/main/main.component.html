@@ -9,7 +9,7 @@
   <hr />
 
   <div class="row">
-    <div class="col-sm-4" *ngFor="let offer of offers">
+    <div class="offer col-sm-6 col-lg-4" *ngFor="let offer of offers">
       <div class="card">
         <img class="card-img-top" [src]="offer.imagens[0].url" />
 
@@ -17,14 +17,15 @@
           <h4 class="card-title">{{ offer.titulo }}</h4>
           <p class="card-text">{{ offer.descricao_oferta }}</p>
           <div class="flex">
-            <p class="price">
+            <p class="price col-sm-8">
               {{ offer.valor | currency: "BRL":"symbol" }}
             </p>
-            <a
+            <button
               [routerLink]="['/ofertas', offer.id]"
-              class="btn btn-outline-primary"
-              >Ver oferta</a
+              class="btn btn-outline-primary col-sm-5"
             >
+              Ver oferta
+            </button>
           </div>
         </div>
       </div>
