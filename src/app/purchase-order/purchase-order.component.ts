@@ -43,10 +43,12 @@ export class PurchaseOrderComponent implements OnInit {
       this.form.value.address,
       this.form.value.number,
       this.form.value.complement,
-      this.form.value.paymentMethod
+      this.form.value.paymentMethod,
+      this.cartService.showItems()
     );
 
     console.log(order);
+
     this.purchaseOrderService
       .makePurchase(order)
       .subscribe(
