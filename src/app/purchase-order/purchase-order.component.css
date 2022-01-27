@@ -18,3 +18,11 @@ input.ng-valid.ng-touched {
 select.ng-valid.ng-touched {
   border: 1px solid green;
 }
+
+.empty-cart {
+  height: 300px;
+  background-color: #fafafa;
+  border-bottom: solid 1px #f0f0f0;
+  justify-content: space-around;
+  align-items: center;
+}
