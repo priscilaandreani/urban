@@ -5,8 +5,11 @@ import localePt from '@angular/common/locales/pt';
 
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { ROUTES } from './app.routes';
+
+import { CartService } from './service';
 
 import { AppComponent } from './app.component';
 import { TopComponent } from './top/top.component';
@@ -20,7 +23,6 @@ import { AddressComponent } from './offer/address/address.component';
 import { ShortDescription } from './utils/short-description.pipe';
 import { PurchaseOrderComponent } from './purchase-order/purchase-order.component';
 import { PurchaseOrderSuccessComponent } from './purchase-order-success/purchase-order-success.component';
-import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     RouterModule.forRoot(ROUTES),
     ReactiveFormsModule,
   ],
-  providers: [{ provide: LOCALE_ID, useValue: 'pt' }],
+  providers: [CartService, { provide: LOCALE_ID, useValue: 'pt' }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
