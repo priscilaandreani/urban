@@ -288,6 +288,31 @@
         }
       ],
       "id": 11
+    },
+    {
+      "address": "Rua 155",
+      "number": "151",
+      "complement": null,
+      "paymentMethod": "cash",
+      "items": [
+        {
+          "id": 4,
+          "img": "/assets/ofertas/4/img1.jpg",
+          "title": "Estância das águas",
+          "offer_description": "Diversão garantida com piscinas, trilhas e muito mais.",
+          "value": 31.9,
+          "quantity": 1
+        },
+        {
+          "id": 2,
+          "img": "/assets/ofertas/2/img1.jpg",
+          "title": "Cozinha Mexicana",
+          "offer_description": "Almoço ou Jantar com Rodízio Mexicano delicioso.",
+          "value": 32.9,
+          "quantity": 1
+        }
+      ],
+      "id": 12
     }
   ]
 }

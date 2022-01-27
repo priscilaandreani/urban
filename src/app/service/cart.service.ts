@@ -62,4 +62,8 @@ export class CartService {
       }
     }
   }
+
+  public cleanCart(): void {
+    this.items = [];
+  }
 }
